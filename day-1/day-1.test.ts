@@ -1,5 +1,7 @@
-describe('bla', function () {
-    it('should ', function () {
-        expect(1).toEqual(1)
+import day1 from "./day-1";
+
+describe('Counting calories', function () {
+    it('should blabla', function () {
+        expect(day1().countingCalories).toEqual(0)
     });
 });
