@@ -1,9 +1,6 @@
-const day1 = () => {
 
-    let countingCalories = 0;
-    return {
-        countingCalories
-    }
+export const countCalories = (elf: string[]) => {
+    return elf[0]
 }
 
-export default day1;
+

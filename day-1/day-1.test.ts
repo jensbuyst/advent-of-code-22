@@ -1,12 +1,25 @@
-import {readFileSync} from "fs";
-import day1 from "./day-1";
+import {countCalories} from "./day-1";
 
-let input: string[] = readFileSync('./day-1-input.txt', 'utf-8').split(/\r?\n/);
-
+const GIVEN_EXAMPLE = [
+    "1000",
+    "2000",
+    "3000",
+    "",
+    "4000",
+    "",
+    "5000",
+    "6000",
+    "",
+    "7000",
+    "8000",
+    "9000",
+    "",
+    "10000"
+]
 describe('Counting calories', function () {
 
-    it('should blabla', function () {
-        expect(day1().countingCalories).toEqual(0)
-        console.log(input);
+    it('should return the calories carried by an elf', function () {
+        expect(countCalories(["1000"])).toEqual("1000")
     });
 });
+
