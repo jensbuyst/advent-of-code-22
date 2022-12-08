@@ -1,6 +1,8 @@
 
-export const countCalories = (elf: string[]) => {
-    return elf[0]
+export const countCalories = (elf: string[]): number => {
+    const numberValuesOfCalories = elf.map(food => parseInt(food))
+
+    return numberValuesOfCalories.reduce((prev, current) => prev + current)
 }
 
 

@@ -17,9 +17,14 @@ const GIVEN_EXAMPLE = [
     "10000"
 ]
 describe('Counting calories', function () {
-
-    it('should return the calories carried by an elf', function () {
-        expect(countCalories(["1000"])).toEqual("1000")
+    describe('of an elf', function () {
+        it('with 1 piece of food', function () {
+            expect(countCalories(["1000"])).toEqual(1000)
+        });
+        it('with 2 pieces of food', function () {
+            expect(countCalories(["1000", "2000"])).toEqual(3000)
+        });
     });
+
 });
 
