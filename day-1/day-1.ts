@@ -1,17 +1,17 @@
 import {readFileSync} from "fs";
 
-export const readCaloriesFromFile = (): number[] => {
-    const file = readFileSync('./testFile.txt', 'utf-8').split(/\r?\n/);
+export const readCaloriesFromFile = (path: string = './testFile.txt'): number[] => {
+    const file = readFileSync(path, 'utf-8').split(/\r?\n/);
     return file.map(calorie => parseInt(calorie));
 };
 
-export function splitInElves(input: number[]): number[][] {
-    return input.reduce((acc, curr, index) => {
-        if(acc.length === 0) {
+export const splitInElves = (input: number[]): number[][] => {
+    return input.reduce((acc, curr) => {
+        if (acc.length === 0) {
             acc.push([])
         }
 
-        if(Number.isNaN(curr)) {
+        if (Number.isNaN(curr)) {
             acc.push([])
             return acc;
         }
@@ -19,5 +19,11 @@ export function splitInElves(input: number[]): number[][] {
         acc[acc.length - 1].push(curr)
 
         return acc;
-    }, [] as number[][])
+    }, [] as number[][]);
+};
+
+export const countCalories = (elf: number[]) => elf.reduce((prev, curr) => prev + curr, 0);
+
+export const maxCalories = (elves: number[][]) => {
+    return Math.max(...elves.map(elf => countCalories(elf)))
 }
