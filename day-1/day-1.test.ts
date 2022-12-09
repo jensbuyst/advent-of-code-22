@@ -35,7 +35,7 @@ describe("Day 1 solution", () => {
         const input = readCaloriesFromFile('./day-1-input.txt');
         const elves = splitInElves(input);
 
-        expect(maxCalories(elves)).toEqual(70698)
+        expect(maxCalories(elves)).toEqual(64929)
     })
 })
 
