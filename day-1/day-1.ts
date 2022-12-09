@@ -1,11 +1,11 @@
 import {readFileSync} from "fs";
 
-export const readCaloriesFromFile = () => {
+export const readCaloriesFromFile = (): number[] => {
     const file = readFileSync('./testFile.txt', 'utf-8').split(/\r?\n/);
     return file.map(calorie => parseInt(calorie));
 };
 
-export function splitInElves(input: number[]) {
+export function splitInElves(input: number[]): number[][] {
     return input.reduce((acc, curr, index) => {
         if(acc.length === 0) {
             acc.push([])
