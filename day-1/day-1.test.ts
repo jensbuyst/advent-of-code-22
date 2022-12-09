@@ -1,4 +1,4 @@
-import {countCalories, maxCalories, readCaloriesFromFile, splitInElves} from "./day-1";
+import {countCalories, maxCalories, readCaloriesFromFile, splitInElves, top3Calories} from "./day-1";
 
 describe("Day 1 - Part 1", () => {
     describe("Read file", () => {
@@ -38,6 +38,15 @@ describe("Day 1 - Part 1", () => {
 
             expect(maxCalories(elves)).toEqual(64929)
         })
+    })
+})
+
+describe("Day 1 - Part 2", () => {
+    it("Solution", () => {
+        const input = readCaloriesFromFile('./day-1-input.txt');
+        const elves = splitInElves(input);
+
+        expect(top3Calories(elves)).toEqual(193697)
     })
 })
 

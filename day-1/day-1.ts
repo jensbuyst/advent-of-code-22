@@ -27,3 +27,8 @@ export const countCalories = (elf: number[]) => elf.reduce((prev, curr) => prev 
 export const maxCalories = (elves: number[][]) => {
     return Math.max(...elves.map(elf => countCalories(elf)))
 }
+
+export const top3Calories = (elves: number[][]) => {
+    const top3elves = elves.map(elf => countCalories(elf)).sort().reverse().slice(0, 3);
+    return top3elves.reduce((prev, curr) => prev + curr, 0);
+}
