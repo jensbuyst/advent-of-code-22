@@ -6,19 +6,19 @@ export const readCaloriesFromFile = (path: string = './testFile.txt'): number[] 
 };
 
 export const splitInElves = (input: number[]): number[][] => {
-    return input.reduce((acc, curr) => {
-        if (acc.length === 0) {
-            acc.push([])
+    return input.reduce((prev, curr) => {
+        if (prev.length === 0) {
+            prev.push([])
         }
 
         if (Number.isNaN(curr)) {
-            acc.push([])
-            return acc;
+            prev.push([])
+            return prev;
         }
 
-        acc[acc.length - 1].push(curr)
+        prev[prev.length - 1].push(curr)
 
-        return acc;
+        return prev;
     }, [] as number[][]);
 };
 
